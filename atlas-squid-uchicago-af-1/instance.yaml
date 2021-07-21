@@ -1,1 +1,3 @@
-instance: instance_JuVpDGq3enQ
+cluster: uchicago-af
+group: atlas-af-ops
+app: osg-frontier-squid

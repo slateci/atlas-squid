@@ -1,0 +1,34 @@
+Instance: "es5"
+ImageTag: testing
+
+Service:
+  Port: 3128
+  NodePort: 30112
+  MonitoringPort: 3401
+  ExternalVisibility: NodePort
+
+SquidConf:
+  CPU: 2
+  CacheMem: "16384"
+  CacheSize: "100000"
+  CacheDirOnHost: True
+  RequestEphemeralSize: 1024
+  LimitEphemeralSize: 2048
+  IPRange: 192.41.230.0/23 192.41.236.0/23 10.10.0.0/16 141.211.0.0/16 129.79.157.0/24 2001:48A8:68F7:0001::/64 2001:48A8:68F7:8001::/64
+  MonitoringIPRange: 127.0.0.1/32 192.170.227.128/32 128.135.158.191/32 188.185.0.0/17 131.225.240.232/32 128.142.0.0/16 188.184.128.0/17 188.185.48.0/20 188.185.128.0/17 129.79.157.0/24
+  LogToStdout: False
+  CleanLog: False
+  Logfile_Rotate: "30"
+  MaxAccessLog: "512M"  
+  UseHostpathLogDir: True
+  DisableDiskCache: False
+
+NodeSelection:  
+  Hostname: sl-um-es5.slateci.io
+  OpenDefaultMonPort: True
+
+Pod:
+  # Set to true if you want to use the host's timezone settings. This would affect the timestamps of log messages.
+  # Default timezone is UTC.
+  UseHostTimezone: True
+

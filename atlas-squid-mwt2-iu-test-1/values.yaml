@@ -17,7 +17,7 @@ SquidConf:
 Instance: !<!> ""
 NodeSelection:
   OpenDefaultMonPort: True
-  Hostname: iut2-slate01.mwt2.org
+  Hostname: iut2-slate01.iu.edu
 Service:
   NodePort: 32200
   ExternalVisibility: NodePort

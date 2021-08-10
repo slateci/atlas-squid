@@ -1,3 +1,5 @@
 cluster: mwt2-iu-test
 group: atlas-squid
 app: osg-frontier-squid
+
+instance: instance_sVKMFfe1g8U

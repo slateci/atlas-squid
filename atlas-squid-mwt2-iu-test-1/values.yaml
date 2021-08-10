@@ -8,7 +8,7 @@ SquidConf:
   UseHostpathLogDir: True
   CacheDirOnHost: !<!> /slate-cache/squid-cache
   Logfile_Rotate: !<!> 5
-  CacheSize: !<!> 100000
+  CacheSize: !<!> 100001
   CacheMem: !<!> 16384
   DisableDiskCache: False
   CPU: 4

@@ -14,7 +14,7 @@ SquidConf:
   CPU: 4
   LogToStdout: False
   CleanLog: False
-Instance: !<!> "Freds_test_instance"
+Instance: !<!> "freds-test-instance"
 NodeSelection:
   OpenDefaultMonPort: True
   Hostname: iut2-slate01.iu.edu

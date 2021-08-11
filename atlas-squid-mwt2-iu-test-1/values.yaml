@@ -8,13 +8,13 @@ SquidConf:
   UseHostpathLogDir: True
   CacheDirOnHost: !<!> /slate-cache/squid-cache
   Logfile_Rotate: !<!> 5
-  CacheSize: !<!> 100001
+  CacheSize: !<!> 100000
   CacheMem: !<!> 16384
   DisableDiskCache: False
   CPU: 4
   LogToStdout: False
   CleanLog: False
-Instance: !<!> ""
+Instance: !<!> "Freds_test_instance"
 NodeSelection:
   OpenDefaultMonPort: True
   Hostname: iut2-slate01.iu.edu

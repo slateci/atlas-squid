@@ -6,7 +6,7 @@ SquidConf:
   RequestEphemeralSize: 1024
   MaxAccessLog: !<!> 1000M
   UseHostpathLogDir: True
-  CacheDirOnHost: !<!> /slate-cache/squid-cache
+  CacheDirOnHost: !<!> True
   Logfile_Rotate: !<!> 5
   CacheSize: !<!> 100000
   CacheMem: !<!> 16384

@@ -52,7 +52,7 @@ Once everything is setup, copy `.github/workflows/slate-deployment.yml` into you
 
 ### Enable Actions in the GitHub UI
 
-Once the workflow is added to the repository, you must allow it to run by navigating to the Actions tab in GitHub's interface.
+Once the workflow is added to the repository, you must allow it to run by navigating to the Actions tab in the GitHub's interface.
 
 ## Git force pushes
 

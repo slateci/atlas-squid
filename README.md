@@ -45,7 +45,17 @@ To deploy new instances you must include the cluster, group, and app. Version is
  To manage existing instances you only need to specify a SLATE instanceID.
 
         instance: instance_BrX9HtpP1L0
+ 
+ **Reverting a change**
+ 
+ To revert a change that has been made, you'll need to do the following on a clean copy of the repository:
+        
+        git revert [hash]
+        git commit 
+        git push
 
+ After doing this, the configuration change made in the specified `hash` (e.g. `1c002d`) should be reverted.
+ 
 ### Copy the workflow
 
 Once everything is setup, copy `.github/workflows/slate-deployment.yml` into your repository.

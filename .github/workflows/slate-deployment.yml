@@ -19,7 +19,7 @@ jobs:
         run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/PushUpdates.py -o PushUpdates.py
 
       - name: Pull down mailgun
-        run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/mailgun.py -o mailgun.py
+        run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/mail_script/mailgun.py -o mailgun.py
 
       - name: Install Python dependencies
         run: pip install -U requests

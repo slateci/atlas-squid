@@ -18,6 +18,9 @@ jobs:
       - name: Pull down automation script
         run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/PushUpdates.py -o PushUpdates.py
 
+      - name: Pull down mailgun
+        run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/mailgun.py -o mailgun.py
+
       - name: Install Python dependencies
         run: pip install -U requests
 
@@ -39,6 +42,21 @@ jobs:
           git diff --name-status --pretty="format:" "$BEFORE" "$AFTER" > .changed
           python3 PushUpdates.py ".changed" "${{ secrets.SLATE_API_TOKEN }}"
           rm .changed
+
+      - name: Email Changes
+        if: ${{ steps.deploy.outputs.push == 'true' }}
+        run: |
+          python3 mailgun.py
+        env:
+          MAILGUN_SUBJECT: "SLATE GitOps Change Summary"
+          MAILGUN_BODY: "${{ steps.deploy.outputs.DIFF_OUTPUT }}"
+          # fill these out appropriately
+          MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
+          MAILGUN_DOMAIN: slateci.io
+          MAILGUN_FROM: "GitOps Notification <noreply@slateci.io>"
+          # this can be a comma delimited list
+          MAILGUN_SEND_TO: lincolnb@uchicago.edu
+
 
       - name: Commit SLATE Instance ID
         if: ${{ steps.deploy.outputs.push == 'true' }}

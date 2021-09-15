@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: Pull down automation script
-        run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/PushUpdates.py -o PushUpdates.py
+        run: curl -fsSL https://github.com/slateci/gitops-automation-script/blob/instance_check/PushUpdates.py -o PushUpdates.py
 
       - name: Pull down mailgun
         run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/mail_script/mailgun.py -o mailgun.py

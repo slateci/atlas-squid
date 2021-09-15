@@ -30,7 +30,6 @@ jobs:
         
       # Runs a set of commands using the runners shell
       - name: test email
-        if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
           python3 mailgun.py
         env:

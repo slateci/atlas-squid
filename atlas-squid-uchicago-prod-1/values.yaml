@@ -2,7 +2,7 @@ Service:
   NodePort: 32301
   Port: 3128
   ExternalVisibility: NodePort
-  MonitoringPort: 3410
+  MonitoringPort: 3411
 NodeSelection:
   OpenDefaultMonPort: True
   Hostname: sl-uc-es1.slateci.io

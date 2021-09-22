@@ -43,21 +43,6 @@ jobs:
           python3 PushUpdates.py ".changed" "${{ secrets.SLATE_API_TOKEN }}"
           rm .changed
 
-      - name: Email Changes
-        if: ${{ steps.deploy.outputs.push == 'true' }}
-        run: |
-          python3 mailgun.py
-        env:
-          MAILGUN_SUBJECT: "SLATE GitOps Change Summary"
-          MAILGUN_BODY: "${{ steps.deploy.outputs.DIFF_OUTPUT }}"
-          # fill these out appropriately
-          MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
-          MAILGUN_DOMAIN: slateci.io
-          MAILGUN_FROM: "GitOps Notification <noreply@slateci.io>"
-          # this can be a comma delimited list
-          MAILGUN_SEND_TO: lincolnb@uchicago.edu
-
-
       - name: Commit SLATE Instance ID
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
@@ -66,3 +51,36 @@ jobs:
           git add .
           git commit -m "append new SLATE instance ID" --allow-empty
           git push
+
+      - name: Get output for mail body
+        id: diff_output
+        if: ${{ steps.deploy.outputs.push == 'true' }}
+        run: |
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.event.after }}"
+
+          # https://stackoverflow.com/questions/40883798/how-to-get-git-diff-of-the-first-commit
+          if [[ $BEFORE = "0000000000000000000000000000000000000000" ]]; then
+            BEFORE="4b825dc642cb6eb9a060e54bf8d69288fbee4904"
+          fi
+
+          if [[ $AFTER = "0000000000000000000000000000000000000000" ]]; then
+            AFTER="4b825dc642cb6eb9a060e54bf8d69288fbee4904"
+          fi
+
+          git diff --name-status --pretty="format:" "$BEFORE" "$AFTER"
+      - name: Email Changes
+        if: ${{ steps.deploy.outputs.push == 'true' }}
+        run: |
+          python3 mailgun.py
+        env:
+          MAILGUN_SUBJECT: "SLATE GitOps Change Summary"
+          MAILGUN_BODY: "${{ steps.deploy.outputs.diff_output }}"
+          # fill these out appropriately
+          MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
+          MAILGUN_DOMAIN: slateci.io
+          MAILGUN_FROM: "GitOps Notification <noreply@slateci.io>"
+          # this can be a comma delimited list
+          MAILGUN_SEND_TO: "lincolnb@uchicago.edu, ssthapa@uchicago.edu"
+
+

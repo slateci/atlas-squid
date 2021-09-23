@@ -43,10 +43,8 @@ jobs:
           python3 PushUpdates.py ".changed" "${{ secrets.SLATE_API_TOKEN }}"
           git rev-list  --format=%B --max-count 1 $AFTER >> mailbody
           cat .changed >> mailbody
-          cat mailbody
           echo "::set-output name=diff::$(cat mailbody)"
           rm .changed
-          rm mailbody
 
       - name: Commit SLATE Instance ID
         if: ${{ steps.deploy.outputs.push == 'true' }}
@@ -60,8 +58,9 @@ jobs:
       - name: Email Changes
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
+          MAILGUN_BODY=$(cat mailbody)
           echo $MAILGUN_BODY
-          python3 mailgun.py
+          rm mailbody
         env:
           MAILGUN_SUBJECT: "SLATE GitOps Change Summary"
           MAILGUN_BODY: ${{ steps.deploy.outputs.diff }}

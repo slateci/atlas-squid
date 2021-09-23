@@ -59,7 +59,7 @@ jobs:
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
           MAILGUN_BODY=$(cat mailbody)
-          echo $MAILGUN_BODY
+          python3 mailgun.py
           rm mailbody
         env:
           MAILGUN_SUBJECT: "SLATE GitOps Change Summary"

@@ -44,6 +44,7 @@ jobs:
           git rev-list  --format=%B --max-count 1 $AFTER >> mailbody
           echo "\n" >> mailbody
           cat .changed >> mailbody
+          cat mailbody
           echo "::set-output name=diff::$(cat mailbody)"
           rm .changed
           rm mailbody

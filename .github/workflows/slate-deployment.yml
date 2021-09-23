@@ -69,6 +69,7 @@ jobs:
           fi
 
           git diff --name-status --pretty="format:" "$BEFORE" "$AFTER"
+                    
       - name: Email Changes
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |

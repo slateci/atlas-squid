@@ -41,7 +41,7 @@ jobs:
 
           git diff --name-status --pretty="format:" "$BEFORE" "$AFTER" > .changed
           python3 PushUpdates.py ".changed" "${{ secrets.SLATE_API_TOKEN }}"
-          git git rev-list  --format=%B --max-count 1 $AFTER >> mailbody
+          git rev-list  --format=%B --max-count 1 $AFTER >> mailbody
           echo "\n" >> mailbody
           cat .changed >> mailbody
           echo "::set-output name=diff::$(cat mailbody)"

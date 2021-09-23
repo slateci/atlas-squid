@@ -53,7 +53,7 @@ jobs:
           git push
 
       - name: Get output for mail body
-        id: diff_output
+        id: diff
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
           BEFORE="${{ github.event.before }}"
@@ -75,7 +75,7 @@ jobs:
           python3 mailgun.py
         env:
           MAILGUN_SUBJECT: "SLATE GitOps Change Summary"
-          MAILGUN_BODY: "${{ steps.deploy.outputs.diff_output }}"
+          MAILGUN_BODY: "${{ steps.diff.outputs }}"
           # fill these out appropriately
           MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
           MAILGUN_DOMAIN: slateci.io

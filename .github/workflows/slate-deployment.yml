@@ -42,7 +42,6 @@ jobs:
           git diff --name-status --pretty="format:" "$BEFORE" "$AFTER" > .changed
           python3 PushUpdates.py ".changed" "${{ secrets.SLATE_API_TOKEN }}"
           git rev-list  --format=%B --max-count 1 $AFTER >> mailbody
-          echo "\n" >> mailbody
           cat .changed >> mailbody
           cat mailbody
           echo "::set-output name=diff::$(cat mailbody)"
@@ -61,6 +60,7 @@ jobs:
       - name: Email Changes
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
+          echo $MAILGUN_BODY
           python3 mailgun.py
         env:
           MAILGUN_SUBJECT: "SLATE GitOps Change Summary"

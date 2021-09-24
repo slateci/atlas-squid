@@ -59,10 +59,9 @@ jobs:
       - name: Email Changes
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
-          echo ${{ env.MAILGUN_BODSY }}
+          echo ${{ env.MAILGUN_BODY }}
         env:
           MAILGUN_SUBJECT: "SLATE GitOps Change Summary"
-          MAILGUN_BODY: $(cat mailbody)
           # fill these out appropriately
           MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
           MAILGUN_DOMAIN: slateci.io

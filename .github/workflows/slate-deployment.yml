@@ -59,7 +59,7 @@ jobs:
       - name: Email Changes
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
-          echo ${{ env.MAILGUN_BODY }}
+          python3 mailgun.py
         env:
           MAILGUN_SUBJECT: "SLATE GitOps Change Summary"
           # fill these out appropriately

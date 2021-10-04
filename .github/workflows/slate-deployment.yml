@@ -67,6 +67,4 @@ jobs:
           MAILGUN_DOMAIN: slateci.io
           MAILGUN_FROM: "GitOps Notification <noreply@slateci.io>"
           # this can be a comma delimited list
-          MAILGUN_SEND_TO: "lincolnb@uchicago.edu, ssthapa@uchicago.edu"
-
-
+          MAILGUN_SEND_TO: "lincolnb@uchicago.edu, ssthapa@uchicago.edu, usatlas-federatedops-l@lists.bnl.gov"

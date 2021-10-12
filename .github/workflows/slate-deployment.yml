@@ -19,7 +19,7 @@ jobs:
         run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/PushUpdates.py -o PushUpdates.py
 
       - name: Install Python dependencies
-        run: pip install -U requests
+        run: pip install -U requests jinja2
 
       - name: Deploy to SLATE
         id: deploy
@@ -38,10 +38,6 @@ jobs:
 
           git diff --name-status --pretty="format:" "$BEFORE" "$AFTER" > .changed
           python3 PushUpdates.py ".changed" "${{ secrets.SLATE_API_TOKEN }}"
-          echo 'MAILGUN_BODY<<EOF' >> $GITHUB_ENV
-          git rev-list  --format=%B --max-count 1 $AFTER >> $GITHUB_ENV
-          cat .changed >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
           rm .changed
           rm PushUpdates.py
 
@@ -60,7 +56,8 @@ jobs:
       - name: Email Changes
         if: ${{ steps.deploy.outputs.push == 'true' }}
         run: |
-          python3 mailgun.py
+          python3 generate_mail_body.py ${{ github.event.after }}
+          python3 mailgun.py 
         env:
           MAILGUN_SUBJECT: "SLATE GitOps Change Summary"
           # fill these out appropriately

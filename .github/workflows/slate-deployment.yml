@@ -18,9 +18,6 @@ jobs:
       - name: Pull down automation script
         run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/PushUpdates.py -o PushUpdates.py
 
-      - name: Pull down mailgun
-        run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/mailgun.py -o mailgun.py
-
       - name: Install Python dependencies
         run: pip install -U requests
 
@@ -46,6 +43,7 @@ jobs:
           cat .changed >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
           rm .changed
+          rm PushUpdates.py
 
       - name: Commit SLATE Instance ID
         if: ${{ steps.deploy.outputs.push == 'true' }}
@@ -55,6 +53,9 @@ jobs:
           git add .
           git commit -m "append new SLATE instance ID" --allow-empty
           git push
+
+      - name: Pull down mailgun
+        run: curl -fsSL https://raw.githubusercontent.com/slateci/gitops-automation-script/main/mailgun.py -o mailgun.py
 
       - name: Email Changes
         if: ${{ steps.deploy.outputs.push == 'true' }}

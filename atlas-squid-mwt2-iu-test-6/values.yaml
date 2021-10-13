@@ -21,6 +21,6 @@ NodeSelection:
 Service:
   NodePort: 32200
   ExternalVisibility: NodePort
-  MonitoringPort: 3403
+  MonitoringPort: 3404
   Port: 3128
 ImageTag: testing

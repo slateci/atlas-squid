@@ -37,6 +37,7 @@ jobs:
           fi
 
           git diff --name-status --pretty="format:" "$BEFORE" "$AFTER" > .changed
+          DEBUG="TRUE"
           python3 PushUpdates.py ".changed" "${{ secrets.SLATE_API_TOKEN }}"
           rm .changed
           rm PushUpdates.py

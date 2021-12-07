@@ -1,5 +1,5 @@
 Service:
-  NodePort: 32202
+  NodePort: 32200
   Port: 3128
   ExternalVisibility: NodePort
   MonitoringPort: 3402

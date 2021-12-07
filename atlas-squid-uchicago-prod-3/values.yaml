@@ -2,7 +2,7 @@ Service:
   NodePort: 32200
   Port: 3128
   ExternalVisibility: NodePort
-  MonitoringPort: 3402
+  MonitoringPort: 3401
 NodeSelection:
   OpenDefaultMonPort: True
   Hostname: sl-uc-xcache1.slateci.io

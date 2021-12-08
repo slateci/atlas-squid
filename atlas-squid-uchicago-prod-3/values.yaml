@@ -17,7 +17,7 @@ SquidConf:
   MaximumObjectSizeInMemory: !<!> 1048704
   DisableDiskCache: False
   CacheDirOnHost: "/nvme/squid"
-  DisableLogging: False
+  DisableLogging: True
   UseHostpathLogDir: True
   CPU: 4
   CacheMem: "8192"

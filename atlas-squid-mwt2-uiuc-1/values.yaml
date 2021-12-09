@@ -5,7 +5,7 @@ Service:
   MonitoringPort: 3401
 NodeSelection:
   OpenDefaultMonPort: True
-  Hostname: mwt2-slate01.campuscluster.illinois.edu
+  Hostname: mwt2-slate01
 SquidConf:
   Logfile_Rotate: !<!> 20
   CleanLog: False

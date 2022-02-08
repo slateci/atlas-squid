@@ -24,5 +24,4 @@ SquidConf:
 NodeSelection:
   OpenDefaultMonPort: True
   Hostname: atlas-slate01
-ImageTag: testing
-
+ImageTag: testing-3.6

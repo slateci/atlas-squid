@@ -1,5 +1,5 @@
 
-ImageTag: testing
+ImageTag: 3.6-testing
 Instance: !<!> es3
 NodeSelection:
   OpenDefaultMonPort: True

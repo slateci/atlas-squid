@@ -1,4 +1,3 @@
-
 ImageTag: 3.6-testing
 Instance: !<!> es3
 NodeSelection:
@@ -17,7 +16,7 @@ SquidConf:
   CacheSize: !<!> 100000
   CPU: 2
   CacheMem: !<!> 16384
-  Logfile_Rotate: !<!> 30
+  Logfile_Rotate: !<!> 90
   DisableDiskCache: False
   RequestEphemeralSize: 1024
   MonitoringIPRange: 127.0.0.1/32 192.170.227.128/32 128.135.158.191/32 188.185.0.0/17 131.225.240.232/32 128.142.0.0/16 188.184.128.0/17 188.185.48.0/20 188.185.128.0/17 129.79.157.0/24

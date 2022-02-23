@@ -23,4 +23,4 @@ Service:
   ExternalVisibility: NodePort
   MonitoringPort: 3401
   Port: 3128
-ImageTag: testing
+ImageTag: 3.6-testing

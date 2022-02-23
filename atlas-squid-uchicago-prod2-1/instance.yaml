@@ -1,0 +1,5 @@
+cluster: uchicago-prod2
+group: slate-dev
+app: osg-frontier-squid
+
+instance: instance_A0ysXxzIt1o

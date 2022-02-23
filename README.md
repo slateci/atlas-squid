@@ -74,4 +74,3 @@ If instance deletion is desired, it must currently be performed manually.
 
 The automation will writeback the instance ID for instances that get deployed, this should be refactored to happen on a branch.
 
-test

@@ -33,7 +33,7 @@ Optionally you can specify and update the version of the SLATE application with 
 
 **New Instances**
 
-To deploy new instances you must include the cluster, group, and app. Version is optional.
+To deploy new instances you must create a new directory with a `instance.yaml` file that includes the cluster, group, and app. Version is optional.
 
         cluster: uutah-prod
         group: slate-dev

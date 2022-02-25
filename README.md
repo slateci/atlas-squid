@@ -42,7 +42,7 @@ To deploy new instances you must create a new directory with a `instance.yaml` f
 
  **Existing instances**
 
- To manage existing instances you only need to specify a SLATE instanceID.
+ To manage existing instances you only need to specify a SLATE instanceID in the `instance.yaml` file.
 
         instance: instance_BrX9HtpP1L0
  

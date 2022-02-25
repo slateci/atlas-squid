@@ -37,7 +37,7 @@ To deploy new instances you must create a new directory with a `instance.yaml` f
 
         cluster: uutah-prod
         group: slate-dev
-        app: nginx
+        app: osg-frontier-squid
         version: 1.2.0
 
  **Existing instances**

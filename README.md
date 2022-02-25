@@ -36,7 +36,7 @@ Optionally you can specify and update the version of the SLATE application with 
 To deploy new instances you must create a new directory with a `instance.yaml` file that includes the cluster, group, and app. Version is optional.
 
         cluster: uutah-prod
-        group: slate-dev
+        group: atlas-squid
         app: osg-frontier-squid
         version: 1.2.0
 

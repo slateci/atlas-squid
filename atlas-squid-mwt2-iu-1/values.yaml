@@ -24,3 +24,5 @@ Service:
   MonitoringPort: 3401
   Port: 3128
 ImageTag: 3.6-testing
+Alarm:
+  Site: mwt2-iu

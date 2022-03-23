@@ -3,7 +3,7 @@ Service:
   Port: 3128
   ExternalVisibility: NodePort
   MonitoringPort: 3401
-Alarm
+Alarm:
   Site: "MWT2"
 NodeSelection:
   OpenDefaultMonPort: True

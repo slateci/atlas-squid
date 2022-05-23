@@ -1,4 +1,4 @@
-Instance: !<!> ""
+Instance: "iut2-squid-1"
 
 NodeSelection:
   OpenDefaultMonPort: True

@@ -1,4 +1,4 @@
-Instance: "iut2-squid-1"
+Instance: "atlas-squid-mwt2-iu-1"
 
 NodeSelection:
   OpenDefaultMonPort: True

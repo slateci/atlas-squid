@@ -16,7 +16,7 @@ SquidConf:
   LogToStdout: False
   RequestEphemeralSize: 1024
   MaxAccessLog: !<!> 5000M
-  CacheSize: 100000
+  CacheSize: 25000
   MaximumObjectSizeInMemory: !<!> 1048704
   DisableDiskCache: False
   CacheDirOnHost: "/nvme/squid"

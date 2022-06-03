@@ -28,7 +28,7 @@ SquidConf:
   UseHostpathLogDir: True
   Logfile_Rotate: "20"
   MaxAccessLog: "5000M"
-  DisableLogging: True
+  DisableLogging: False
 
 Alarm:
   Site: "MWT2"

@@ -1,14 +1,14 @@
-Instance: "atlas-squid-mwt2-iu-1"
+Instance: "mwt2-iu-1"
 
 NodeSelection:
   OpenDefaultMonPort: True
   Hostname: iut2-slate.mwt2.org
 
 Service:
+  Port: 3128
+  MonitoringPort: 3401
   NodePort: 32200
   ExternalVisibility: NodePort
-  MonitoringPort: 3401
-  Port: 3128
 
 ImageTag: 3.6-testing
 
@@ -17,8 +17,9 @@ Pod:
 
 SquidConf:
   CPU: 4
-  CacheMem: "16384"
-  CacheSize: "100000"
+  CacheMem: "8192"
+  CacheSize: "25000"
+  MaximumObjectSizeInMemory: "1048704"
   CacheDirOnHost: True
   DisableDiskCache: False
   IPRange: 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 72.36.96.0/24 149.165.224.0/23 192.170.240.0/23
@@ -29,7 +30,7 @@ SquidConf:
   LogToStdout: False
   UseHostpathLogDir: True
   Logfile_Rotate: "5"
-  MaxAccessLog: "1000M"
+  MaxAccessLog: "5000M"
 
 Alarm:
   Site: "MWT2"

@@ -17,7 +17,7 @@ Pod:
 
 SquidConf:
   CPU: 4
-  CacheMem: "8192"
+  CacheMem: "32768"
   CacheSize: "25000"
   MaximumObjectSizeInMemory: "1048704"
   CacheDirOnHost: True

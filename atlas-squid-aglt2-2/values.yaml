@@ -19,11 +19,11 @@ SquidConf:
   LogToStdout: False
   CleanLog: False
   Logfile_Rotate: "30"
-  MaxAccessLog: "512M"  
+  MaxAccessLog: "512M"
   UseHostpathLogDir: True
   DisableDiskCache: False
 
-NodeSelection:  
+NodeSelection:
   Hostname: sl-um-es5.slateci.io
   OpenDefaultMonPort: True
 
@@ -31,4 +31,3 @@ Pod:
   # Set to true if you want to use the host's timezone settings. This would affect the timestamps of log messages.
   # Default timezone is UTC.
   UseHostTimezone: True
-

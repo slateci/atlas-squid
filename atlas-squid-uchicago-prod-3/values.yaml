@@ -15,7 +15,7 @@ ImageTag: 3.6-testing
 SquidConf:
   CPU: 4
   CacheMem: "32768"
-  CacheSize: 25000
+  CacheSize: "25000"
   CacheDirOnHost: True
   DisableDiskCache: False
   MaximumObjectSizeInMemory: "1048704"

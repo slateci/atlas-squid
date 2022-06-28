@@ -1,4 +1,4 @@
-ImageTag: "mwt2-iu-2"
+Instance: "mwt2-iu-2"
 
 NodeSelection:
   OpenDefaultMonPort: True

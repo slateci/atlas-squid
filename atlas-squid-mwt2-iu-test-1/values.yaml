@@ -29,6 +29,6 @@ SquidConf:
   Logfile_Rotate: "5"
   MaxAccessLog: "5000M"
 
-Alarm:
-  Site: "MWT2"
-  AaasServer: aaas.atlas-ml.org
+#Alarm:
+#  Site: "MWT2"
+#  AaasServer: aaas.atlas-ml.org

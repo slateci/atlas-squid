@@ -13,7 +13,7 @@ Service:
 ImageTag: 3.6-testing
 
 SquidConf:
-  CPU: 4
+  CPU: 2
   CacheMem: "16384"
   CacheSize: "25000"
   CacheDirOnHost: True

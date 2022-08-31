@@ -25,7 +25,7 @@ SquidConf:
   LimitEphemeralSize: 256
   CleanLog: False
   LogToStdout: False
-  UseHostpathLogDir: True
+  UseHostpathLogDir: False
   Logfile_Rotate: "5"
   MaxAccessLog: "500M"
 

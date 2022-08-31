@@ -28,3 +28,7 @@ SquidConf:
   UseHostpathLogDir: True
   Logfile_Rotate: "5"
   MaxAccessLog: "1000M"
+
+Alarm:
+  Site: "MWT2"
+  AaasServer: aaas.atlas-ml.org

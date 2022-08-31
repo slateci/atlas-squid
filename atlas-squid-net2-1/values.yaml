@@ -21,13 +21,13 @@ SquidConf:
   MaximumObjectSizeInMemory: "1048704"
   IPRange: 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 192.5.207.199/32 192.170.227.128/32
   MonitoringIPRange: 127.0.0.1/32 192.170.227.128/32 128.135.158.191/32 188.185.0.0/17 131.225.240.232/32 128.142.0.0/16 188.184.128.0/17 188.185.48.0/20 188.185.128.0/17
-  RequestEphemeralSize: 1024
-  LimitEphemeralSize: 2048
+  RequestEphemeralSize: 128
+  LimitEphemeralSize: 256
   CleanLog: False
   LogToStdout: False
   UseHostpathLogDir: True
   Logfile_Rotate: "5"
-  MaxAccessLog: "1000M"
+  MaxAccessLog: "50M"
 
 Alarm:
   Site: "MWT2"

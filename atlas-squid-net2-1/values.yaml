@@ -30,5 +30,5 @@ SquidConf:
   MaxAccessLog: "50M"
 
 Alarm:
-  Site: "MWT2"
+  Site: "NET2"
   AaasServer: aaas.atlas-ml.org

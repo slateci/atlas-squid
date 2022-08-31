@@ -13,8 +13,8 @@ Service:
 ImageTag: 3.6-testing
 
 SquidConf:
-  CPU: 2
-  CacheMem: "16384"
+  CPU: 4
+  CacheMem: "32768"
   CacheSize: "25000"
   CacheDirOnHost: True
   DisableDiskCache: False
@@ -27,7 +27,7 @@ SquidConf:
   LogToStdout: False
   UseHostpathLogDir: True
   Logfile_Rotate: "5"
-  MaxAccessLog: "50M"
+  MaxAccessLog: "500M"
 
 Alarm:
   Site: "NET2"

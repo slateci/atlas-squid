@@ -2,7 +2,7 @@ Instance: "net2-1"
 
 NodeSelection:
   OpenDefaultMonPort: True
-  Hostname: atlas-slate01.bu.edu
+  Hostname: atlas-slate01
 
 Service:
   Port: 3128

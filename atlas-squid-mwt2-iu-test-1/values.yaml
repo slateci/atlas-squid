@@ -27,7 +27,7 @@ SquidConf:
   LogToStdout: False
   UseHostpathLogDir: True
   Logfile_Rotate: "5"
-  MaxAccessLog: "5000M"
+  MaxAccessLog: "1000M"
 
 Alarm:
   Site: "MWT2"

@@ -10,6 +10,7 @@ Service:
   NodePort: 32200
   ExternalVisibility: NodePort
 
+# Should we change this to just 3.6 ? 
 ImageTag: 3.6-testing
 
 SquidConf:

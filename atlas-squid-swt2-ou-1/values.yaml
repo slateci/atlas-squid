@@ -9,7 +9,7 @@ SquidConf:
   CleanLog: True
   DisableDiskCache: False
   CacheDirOnHost: True
-  IPRange: 10.1.0.0/16 129.107.255.0/24 129.15.40.0/23 129.15.42.0/23 129.15.30.0/23
+  IPRange: 10.251.0.0/16 10.1.0.0/16 129.107.255.0/24 129.15.40.0/23 129.15.42.0/23 129.15.30.0/23
   MaximumObjectSizeInMemory: !<!> 1048704
   RequestEphemeralSize: 1000
   LogToStdout: False

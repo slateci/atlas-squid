@@ -1,5 +1,5 @@
 Instance: "es5"
-ImageTag: 3.6-testing
+ImageTag: 23-release
 
 Service:
   Port: 3128

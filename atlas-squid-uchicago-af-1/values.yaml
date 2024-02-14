@@ -8,7 +8,7 @@ Instance: "af-01"
 # Supported values are e.g. 'release' or 'testing' or 'development'. Default is
 # 'release'. Consult the opensciencegrid/frontier-squid docker image for other
 # tags.
-#ImageTag: release
+ImageTag: release
 
 Service:
   # Port that the service will utilize.
@@ -23,7 +23,7 @@ Service:
   # - ClusterIP - Your service will only be accessible on the cluster's internal 
   #               kubernetes network. Use this if you only want to connect to 
   #               your service from other services running on the same cluster. 
-  ExternalVisibility: ClusterIP
+  ExternalVisibility: NodePort
   # External port on which the service will be accessible when using NodePort
   # visibility. The default behavior, if this value is not set, is for 
   # Kubernetes to select a port randomly from within its NodePort range. Note
@@ -68,7 +68,7 @@ SquidConf:
   # Use 0.0.0.0/0 for open access.
   # The default set of ranges are those defined in RFC 1918 and typically used 
   # within kubernetes clusters. 
-  IPRange: 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 192.170.240.0/23
+  IPRange: 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 192.170.240.0/23 23.134.232.48/28
 
   # The regular expressiion to restrict outbound traffic
   #RESTRICT_DEST: "^(((cms|atlas).*frontier.*)\\.cern\\.ch)|frontier.*\\.racf\\.bnl\\.gov$"

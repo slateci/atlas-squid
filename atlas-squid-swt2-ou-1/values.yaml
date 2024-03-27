@@ -5,14 +5,14 @@ SquidConf:
   Logfile_Rotate: !<!> 50
   MaxAccessLog: !<!> 20M
   CPU: 4
-  DisableLogging: False
+  DisableLogging: True
   CleanLog: True
   DisableDiskCache: False
   CacheDirOnHost: True
   IPRange: 10.251.0.0/16 10.1.0.0/16 129.107.255.0/24 129.15.40.0/23 129.15.42.0/23 129.15.30.0/23
   MaximumObjectSizeInMemory: !<!> 1048704
   RequestEphemeralSize: 1000
-  UseHostpathLogDir: True
+  UseHostpathLogDir: False
   LogToStdout: False
   CacheMem: "16384"
 Instance: !<!> ""

@@ -1,0 +1,4 @@
+cluster: mwt2-iu
+group: mwt2
+app: osg-frontier-squid
+version: 1.8.8

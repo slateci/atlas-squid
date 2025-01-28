@@ -10,7 +10,7 @@ Service:
   NodePort: 32200
   ExternalVisibility: NodePort
 
-ImageTag: 23-release
+ImageTag: 24-release-20241201-0815
 
 SquidConf:
   CPU: 4

@@ -24,4 +24,4 @@ Service:
   MonitoringPort: 3401
   Port: 3128
   NodePort: 32200
-ImageTag: 3.6-testing
+ImageTag: 24-release
